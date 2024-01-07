@@ -1,0 +1,40 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: scream-4.0
+Upstream-Contact: <duncanthrax>
+Source: <https://github.com/duncanthrax/scream/tree/master/Receivers/unix>
+#
+# Please double check copyright with the licensecheck(1) command.
+
+Files:     CMakeLists.txt
+           README.md
+           alsa.c
+           alsa.h
+           config.h.in
+           jack.h
+           network.c
+           network.h
+           pcap.c
+           pcap.h
+           pulseaudio.c
+           pulseaudio.h
+           raw.c
+           raw.h
+           scream.c
+           scream.h
+           scream.service
+           scream2aac.sh
+           shell.nix
+           shmem.c
+           shmem.h
+           sndio.c
+           sndio.h
+Copyright: __NO_COPYRIGHT_NOR_LICENSE__
+License:   The Microsoft Public License (MS-PL) 
+
+Files:     jack.c
+Copyright: 2020 Oleksandr Dunayevskyy <oleksandr.dunayevskyy@gmail.com>
+License:   __NO_LICENSE__
+
+#----------------------------------------------------------------------------
+# Files marked as NO_LICENSE_TEXT_FOUND may be covered by the following
+# license/copyright files.
