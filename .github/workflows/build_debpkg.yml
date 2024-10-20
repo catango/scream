@@ -1,0 +1,23 @@
+name: Build scream receiver for debian
+on: [push]
+jobs:
+  build-debs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: debian/latest
+          sparse-checkout: |
+            Receivers/unix
+          sparse-checkout-cone-mode: false
+      - uses: jtdor/build-deb-action@v1
+        with:
+          buildpackage-opts: --build=binary --no-sign
+          source-dir: Receivers/unix
+          artifacts-dir: artifacts
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scream-receiver-deb
+          path: artifacts
+
