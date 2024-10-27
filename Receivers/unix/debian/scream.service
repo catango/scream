@@ -3,6 +3,7 @@ Description=Scream audio receiver
 After=sound.target
 
 [Service]
+User=scream
 ExecStart=/usr/bin/scream -o alsa
 ExecReload=/bin/pkill scream
 RestartSec=5
