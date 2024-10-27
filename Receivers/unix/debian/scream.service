@@ -1,10 +1,9 @@
 [Unit]
 Description=Scream audio receiver
-After=pulseaudio.service
+After=sound.target
 
 [Service]
-User=pi
-ExecStart=/usr/bin/scream
+ExecStart=/usr/bin/scream -o alsa
 ExecReload=/bin/pkill scream
 RestartSec=5
 Restart=always
