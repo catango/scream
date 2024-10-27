@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Disable and stop the service
+systemctl disable --now scream.service
+
+# Remove the user
+userdel scream
+
+# Clean up the data directory (don't worry about program files, 'dpkg' handles that!)
+rm -rf /var/lib/scream
+
+# Explicitly exit 0
+exit 0
