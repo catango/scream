@@ -5,9 +5,10 @@ jobs:
     strategy:
       matrix:
         architecture: [amd64, armhf, arm64]
+        debian: [bookworm, trixie]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: debian/latest
           sparse-checkout: |
@@ -19,9 +20,10 @@ jobs:
           source-dir: Receivers/unix
           artifacts-dir: artifacts
           host-arch: ${{ matrix.architecture }}
+          docker-image: debian:${{ matrix.debian }}-slim
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
-          name: scream-receiver-deb-${{ matrix.architecture }}
+          name: scream-receiver-deb-${{ matrix.debian }}_${{ matrix.architecture }}
           path: artifacts
 
